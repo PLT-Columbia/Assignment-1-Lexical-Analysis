@@ -1,3 +1,8 @@
+# IDE files
+.idea/
+nbprojects/
+.project/
+
 # Prerequisites
 *.d
 

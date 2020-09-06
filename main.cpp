@@ -144,7 +144,7 @@ std::vector<Token> tokenizeCode(std::string _character_stream) {
         }
         else {
             // TODO: add the rest of the tokens.
-            // TODO: in case of an error, the cause of the error should go to the lexeme.
+            // TODO (extra credit): in case of an error, the cause of the error should go to the lexeme.
         }
     }
     return tokens;

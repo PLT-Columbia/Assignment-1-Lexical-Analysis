@@ -28,7 +28,7 @@ The TODO comments indicate all parts of the lexical analyzer that you need to im
 
 We have provided below a list of token classes you must support:
 
-* [ ] **Keywords (20 Points)**: any tokens from the list [_**if**_, _**for**_, _**while**_, _**extern**_, _**asm**_]
+* [ ] **Keywords (20 Points)**: any tokens from the list [_**if**_/_**else**_, _**for**_, _**while**_, _**extern**_, _**asm**_]
 	* Token class: _Keyword_
 * [ ] **Identifiers (20 Points)**: any tokens that begin with an **_alphabetic_** (including both capital and lowercase) character or an **_underscore_** (_), followed by at most 16 alphanumeric characters and/or underscore (EXCEPT for the keyword tokens)
 	* Examples of valid identifiers: **test**, **test1**, **_id1**, and **test_1_id_2**

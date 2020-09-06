@@ -1,4 +1,3 @@
-
 # COMS W4115: Programming Assignment 1 (Lexical Analysis)
 
 ## Course Summary
@@ -27,7 +26,7 @@ The TODO comments indicate all parts of the lexical analyzer that you need to im
 1. `stateTransition`: we have implemented the state transition for the `if` keyword. You are responsible for implementing the rest of the state transitions.
 2. `tokenizeCode`: we have generated tokens for parentheses, curly braces, and the `if` keyword. You are responsible for generating the rest of the tokens.
 
-We have provided below a list of tokens you must support:
+We have provided below a list of token classes you must support:
 
 * [ ] **Keywords (20 Points)**: any tokens from the list [_**if**_, _**for**_, _**while**_, _**extern**_, _**asm**_]
 	* Token class: _Keyword_
@@ -44,12 +43,16 @@ We have provided below a list of tokens you must support:
 	* Examples of comments: **//Hello\n**, **//""\n**, and **//"1.01"\n**
 	* Token class: _Comment_
 
+You are not required to handle standalone whitespaces (_e.g._, **\t**, **\n**, **\r**, etc.), but if you don't handle them, make sure to properly ignore them.
+
 Here is a sample code snippet:
 ```
+
 ```
 
-This the expected output for the above code snippet:
+This is the expected output for the above code snippet:
 ```
+
 ```
 
 ### Extra Credit (40 Points)

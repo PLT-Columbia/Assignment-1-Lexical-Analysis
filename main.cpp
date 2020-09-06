@@ -103,13 +103,6 @@ std::string stateTransition(std::string current_state, char ch) {
  */
 std::vector<Token> tokenizeCode(std::string _character_stream) {
     std::vector<Token> tokens;
-    /*
-     * Note to the students:
-     *     You are free to change this function body as you deem necessary.
-     *     But, the function prototype (i.e., function name, parameter, and return type) cannot be changed.
-     *     A partial implementation is given inside the function for your convenience.
-     *     But remember, you don't have to follow this initial (partial) implementation procedure.
-     */
     std::string state_buffer; // Initially, we start with a null or empty state.
     // We scan character by character.
     for (std::string::iterator string_iter = _character_stream.begin();

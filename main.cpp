@@ -115,7 +115,7 @@ std::vector<Token> tokenizeCode(std::string _character_stream) {
     for (std::string::iterator string_iter = _character_stream.begin();
          string_iter != _character_stream.end();
          string_iter++) {
-        char current_character = string_iter.base()[0];
+        char current_character = *string_iter;
         state_buffer = stateTransition(state_buffer, current_character);
         if (state_buffer == "(") {
             tokens.emplace_back(TokenType::type_lpar, "(");

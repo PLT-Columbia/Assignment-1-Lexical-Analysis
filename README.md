@@ -31,8 +31,8 @@ token classes, state transitions, and outputting tokens. Your task will be to
 fill in the missing items of the tokenizer to generate all tokens for an input code snippet.
 
 The TODO comments indicate all parts of the lexical analyzer that you need to implement in this assignment:
-1. `stateTransition`: we have implemented the state transition for the `if` keyword. You are responsible for implementing the rest of the state transitions.
-2. `tokenizeCode`: we have generated tokens for parentheses, curly braces, and the `if` keyword. You are responsible for generating the rest of the tokens.
+1. [`stateTransition`](src/Lexer.cpp#L28): we have implemented the state transition for the `if` keyword. You are responsible for implementing the rest of the state transitions.
+2. [`tokenizeCode`](src/Lexer.cpp#L50): we have generated tokens for parentheses, curly braces, and the `if` keyword. You are responsible for generating the rest of the tokens.
 
 We have provided below a list of token classes you must support:
 

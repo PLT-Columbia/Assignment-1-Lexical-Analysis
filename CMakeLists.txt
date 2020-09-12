@@ -3,10 +3,10 @@ project(Assignment_1)
 
 set(CMAKE_CXX_STANDARD 11)
 cmake_policy(SET CMP0037 NEW)
-#
-#if(COMMAND cmake_policy)
-#    cmake_policy(SET CMP0003 NEW)
-#endif(COMMAND cmake_policy)
+
+if(COMMAND cmake_policy)
+    cmake_policy(SET CMP0003 NEW)
+endif(COMMAND cmake_policy)
 
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
@@ -41,7 +41,10 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
 endif()
 
 add_executable(Lexer src/Main.cpp src/Lexer.h src/Lexer.cpp)
-add_executable(TestLexer test/LexerTest.cpp src/Lexer.h src/Lexer.cpp)
+add_executable(TestLexer src/LexerTest.cpp src/Lexer.h src/Lexer.cpp)
 target_link_libraries(TestLexer gtest_main)
+
+add_executable(ExtraCreditTest src/ExtraCreditTest.cpp src/Lexer.h src/Lexer.cpp)
+target_link_libraries(ExtraCreditTest gtest_main)
 
 

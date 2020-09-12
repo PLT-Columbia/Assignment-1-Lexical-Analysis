@@ -72,16 +72,15 @@ This is the expected output for the above code snippet:
 
 ```
 
-### Extra Credit (40 Points)
+### Extra Credit (30 Points)
 
 You learned in lecture that lexical analysis can handle errors. You now have the opportunity to figure out how to handle these errors inside your lexical analyzer by detecting and localizing them.
 
 Inside the `tokenizeCode` function, there is a TODO comment for lexical errors:
 * **Detection (10 Points)**: determine if an error exists at all and output the result.
-* **Localization (30 Points)**: determine the cause(s) of any error that exists. There are 3 different causes of lexical errors that you need to support:
-	* **Invalid Identifiers**: any tokens that begin as valid identifiers, but that do not actually match the pattern of identifiers (_e.g._, **id-**, **cpp!**, and **c++**)
-	* **Invalid Numbers**: any tokens that begin as valid numbers, but that do not actually match the pattern of numbers (_e.g._, **1.** and **1.1r**)
-	* **Invalid Strings**: any tokens that begin as valid strings, but that do not actually match the pattern of strings (_e.g._, **"hello**, **"_**, and **""_**)
+* **Localization (20 Points)**: determine the cause(s) of any error that exists. There are 2 different causes of lexical errors that you need to support:
+	* **Invalid Number**: any tokens that begin as valid numbers, but that do not actually match the pattern of numbers (_e.g._, **1.** and **1.1r**)
+	* **Invalid String**: any tokens that begin as valid strings, but that do not actually match the pattern of strings (_e.g._, **"hello**, **"_**, and **""_**)
 
 
 ## Submission

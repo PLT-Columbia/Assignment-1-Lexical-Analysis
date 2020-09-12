@@ -1,5 +1,5 @@
 //
-// Created by saikatc on 9/11/20.
+// Created by Saikat Chakraborty on 9/11/20.
 //
 #include <iostream>
 #include <string>
@@ -15,6 +15,15 @@
  *         Whitespaces usually finish a token, except for strings and comments.
  *         For example, `hello world ` contains 2 identifier tokens, each terminated with a whitespace.
  *         However, `"Hello world "` contains 1 string token, and both spaces are included in the token lexeme.
+ *      2. Whitespaces (i.e. ' ', '\t', '\n') usually ends sequences of characters in a token. However,
+ *         other character can also end token stream. For example,
+ *         a. print ( ) -> the tokens here are <ID, "print">, <LPAR, "(">, and <RPAR, ")">
+ *         b. print() -> the tokens here are alse <ID, "print">, <LPAR, "(">, and <RPAR, ")">
+ *         Note that, in the former case, space (' ') after the token print ended the "print" token.
+ *         However, in the latter case, 'print' is followed by left parenthesis '(' which ends the "print" token.
+ *         Your code should be able to handle both the scenario.
+ *      3. For comment, you should discard the newline character ('\n') that ends the comment.
+ *        See LexerTest.cpp for relevant tst case.
  */
 std::string stateTransition(std::string current_state, char ch) {
     if (current_state.empty()) {
@@ -25,9 +34,7 @@ std::string stateTransition(std::string current_state, char ch) {
     else if (current_state == "i" && ch == 'f') {
         return "if";
     }
-
-        // TODO: implement the rest of the state transitions.
-
+    // TODO: implement the rest of the state transitions.
     else {
         return "Not implemented error!";
     }
@@ -89,21 +96,31 @@ std::vector<Token> tokenizeCode(std::string _character_stream) {
             tokens.emplace_back(TokenType::type_binop, "<=");
             token_accepted = true;
         }
+        else if(next_state == ";"){
+            tokens.emplace_back(TokenType::type_semicolon, ";");
+            token_accepted = true;
+        }
+        else if(next_state == "="){
+            tokens.emplace_back(TokenType::type_assign_op, "=");
+            token_accepted = true;
+        }
         else {
             // TODO: add the rest of the tokens.
             // TODO: Make sure to flag the 'token_accepted' as true when you accept a token.
             // TODO:
-            //      a. Implement Rest of the Keywords i.e. else, while, extern, asm, do
+            //      a. Implement Rest of the Keywords i.e. else, while, extern, asm, for
             //      b. Implement Identifier.
             //      c. Implement Number.
             //      d. Implement String.
             //      e. Implement Comment.
             //      f. [Extra Credit] Implement Lexical Error Check. In case of an error,
-            //                        the cause of the error should go to the lexeme.
+            //                        the cause of the error ("Invalid Number", "Invalid String") should go to the lexeme.
         }
         // If we have already accepted a token, we will start from a empty state.
         if (token_accepted){
             current_state = "";
+            next_state = "";
+            token_accepted = false;
         }
         else{
             // No token has been accepted by this character. Let's proceed
@@ -113,9 +130,25 @@ std::vector<Token> tokenizeCode(std::string _character_stream) {
     return tokens;
 }
 
+TokenType Token::getType() {
+    return this->type;
+}
+
+std::string Token::getLexeme() {
+    return this->lexeme;
+}
+
+bool Token::operator==(const Token& other) const{
+    return this->type == other.type && this->lexeme == other.lexeme;
+}
+
+bool Token::operator!=(const Token& other) const{
+    return type != other.type || lexeme != other.lexeme;
+}
+
 std::string Token::get_repr()
 {
-    std::string return_str = "<" + get_token_type_string(this->type) + ", " + this->lexeme + ">";
+    std::string return_str =  get_token_type_string(this->type) + ", \"" + this->lexeme + "\"";
     return return_str;
 }
 
@@ -158,5 +191,7 @@ std::string get_token_type_string(TokenType _type) {
             return "BINOP";
         case type_semicolon:
             return "SEMICOLON";
+        case type_assign_op:
+            return "ASSIGN";
     }
 }

@@ -18,9 +18,17 @@ Instructor: Prof. Baishakhi Ray
 
 In lecture, you have been learning about lexical analysis and finite automata. In particular, you learned that programs can be classified by token roles or token classes. For this programming assignment, you will gain hands-on experience with lexical analysis and implement your own lexical analyzer to generate a token sequence from a program source.
 
+#### Setup:
+1. Install `cmake` from [here](https://cmake.org/download/), or running `sudo apt-get install cmake` in your terminal.
+2. Run `bash build.sh`.  
+
 ### Main Assignment (100 Points)
 
-We have provided a C++ file called `main.cpp` that contains setup code and helper classes/functions for tokens, token classes, state transitions, and outputting tokens. Your task will be to fill in the missing items of the tokenizer to generate all tokens for an input code snippet.
+
+We have provided C++ file [`src/Lexer.cpp`](src/Lexer.cpp), and header file [`src/Lexer.h`](src/Lexer.h) 
+that contains setup code and helper classes/functions for tokens, 
+token classes, state transitions, and outputting tokens. Your task will be to 
+fill in the missing items of the tokenizer to generate all tokens for an input code snippet.
 
 The TODO comments indicate all parts of the lexical analyzer that you need to implement in this assignment:
 1. `stateTransition`: we have implemented the state transition for the `if` keyword. You are responsible for implementing the rest of the state transitions.
@@ -50,6 +58,7 @@ Here is a sample code snippet:
 #### Testcase1
 **Input&nbsp;&nbsp;&nbsp;&nbsp;:** `if(n>0){ print("Hello World");}` <br/>
 **Output&nbsp;:** <br/>
+This is the expected output for the above code snippet:
 ```        
         <KEYWORD, if>           
         <LPAR, (>
@@ -66,11 +75,8 @@ Here is a sample code snippet:
         <R-CURLY-BRACE, }>
 ```
 
-
-This is the expected output for the above code snippet:
-```
-
-```
+Test file [`src/LexerTest.cpp`](src/LexerTest.cpp) contains relevant test cases for your main assignment. 
+You can run [`bash test.sh`](test.sh) to check which of the provided test cases are passing. 
 
 ### Extra Credit (30 Points)
 
@@ -82,10 +88,20 @@ Inside the `tokenizeCode` function, there is a TODO comment for lexical errors:
 	* **Invalid Number**: any tokens that begin as valid numbers, but that do not actually match the pattern of numbers (_e.g._, **1.** and **1.1r**)
 	* **Invalid String**: any tokens that begin as valid strings, but that do not actually match the pattern of strings (_e.g._, **"hello**, **"_**, and **""_**)
 
+Test file [`src/ExtraCreditTest.cpp`](src/ExtraCreditTest.cpp) contains relevant test cases for your extra credits. 
+You can run [`bash extra_credit.sh`](extra_credit.sh) to check which of the provided test cases for extra credit 
+are passing.
+
+#### Note
+1. Provided test cases are meant for **examples only**, we may run your code with a different test suite.
+2. Be careful about [the corner cases](src/Lexer.cpp#L13) while implementing. 
+3. To debug, you may use [`src/Main.cpp`](src/Main.cpp). 
+We have provided some helper function to help you debug your code.
+
 
 ## Submission
-
-For this programming assignment, you will commit and push to the remote repository. Please make sure to not modify the `.gitignore` file during submission.
+For this programming assignment, you will commit and push to the remote repository. 
+Please make sure not to modify the `.gitignore` file during submission.
 
 
 

@@ -45,10 +45,27 @@ We have provided below a list of token classes you must support:
 
 You are not required to handle standalone whitespaces (_e.g._, **\t**, **\n**, **\r**, etc.), but if you don't handle them, make sure to properly ignore them.
 
-Here is a sample code snippet:
+Here is a sample code snippet: 
+
+#### Testcase1
+**Input&nbsp;&nbsp;&nbsp;&nbsp;:** `if(n>0){ print("Hello World");}` <br/>
+**Output&nbsp;:** <br/>
+```        
+        <KEYWORD, if>           
+        <LPAR, (>
+        <ID, n>
+        <BINOP, >>
+        <NUMBER, 0> 
+        <RPAR, )>    
+        <L-CURLY-BRACE, {>
+        <ID, print>
+        <LPAR, (>
+        <STRING, "Hello World">
+        <RPAR, )>
+        <SEMICOLON, ;> 
+        <R-CURLY-BRACE, }>
 ```
 
-```
 
 This is the expected output for the above code snippet:
 ```
@@ -69,9 +86,8 @@ Inside the `tokenizeCode` function, there is a TODO comment for lexical errors:
 
 ## Submission
 
-For this programming assignment, you will submit the `main.cpp` C++ file with the completed functionality. Please make sure to not modify the `.gitignore` file during submission.
+For this programming assignment, you will commit and push to the remote repository. Please make sure to not modify the `.gitignore` file during submission.
 
-Push this file to the remote repository. Once your assignment has been graded, you will find feedback/reviews in that same repository through a pull request.
 
 
 ## Piazza

@@ -27,10 +27,7 @@ Please follow these instructions prior to starting the assignment:
 
 ### Main Assignment (100 Points)
 
-We have provided C++ file [`src/Lexer.cpp`](src/Lexer.cpp), and header file [`src/Lexer.h`](src/Lexer.h) 
-that contains setup code and helper classes/functions for tokens, 
-token classes, state transitions, and outputting tokens. Your task will be to 
-fill in the missing items of the tokenizer to generate all tokens for an input code snippet.
+We have provided a C++ file, [`src/Lexer.cpp`](src/Lexer.cpp), as well as a header file, [`src/Lexer.h`](src/Lexer.h), that contain setup code and helper classes/functions for tokens, token classes, state transitions, and outputting tokens. Your task will be to fill in the missing items of the tokenizer to generate all tokens for an input code snippet.
 
 The TODO comments indicate all parts of the lexical analyzer that you need to implement in this assignment:
 1. [`stateTransition`](src/Lexer.cpp#L28): we have implemented the state transition for the `if` keyword. You are responsible for implementing the rest of the state transitions.
@@ -57,28 +54,33 @@ You are not required to handle standalone whitespaces (_e.g._, **\t**, **\n**, *
 
 Here is a sample code snippet: 
 
-#### Testcase1
-**Input&nbsp;&nbsp;&nbsp;&nbsp;:** `if(n>0){ print("Hello World");}` <br/>
-**Output&nbsp;:** <br/>
-This is the expected output for the above code snippet:
+### Example
+
+**Input:** 
+```
+if(n > 0) {
+    print("Hello World");
+}
+```
+**Expected Output:**
 ```        
-        <KEYWORD, if>           
-        <LPAR, (>
-        <ID, n>
-        <BINOP, >>
-        <NUMBER, 0> 
-        <RPAR, )>    
-        <L-CURLY-BRACE, {>
-        <ID, print>
-        <LPAR, (>
-        <STRING, "Hello World">
-        <RPAR, )>
-        <SEMICOLON, ;> 
-        <R-CURLY-BRACE, }>
+<KEYWORD, if>           
+<LPAR, (>
+<ID, n>
+<BINOP, >>
+<NUMBER, 0> 
+<RPAR, )>    
+<L-CURLY-BRACE, {>
+<ID, print>
+<LPAR, (>
+<STRING, "Hello World">
+<RPAR, )>
+<SEMICOLON, ;> 
+<R-CURLY-BRACE, }>
 ```
 
-Test file [`src/LexerTest.cpp`](src/LexerTest.cpp) contains relevant test cases for your main assignment. 
-You can run [`bash test.sh`](test.sh) to check which of the provided test cases are passing. 
+We have provided a test suite in [`src/LexerTest.cpp`](src/LexerTest.cpp), which contains relevant test cases for your main assignment. You can run [`bash test.sh`](test.sh) to verify your test cases are passing.
+
 
 ### Extra Credit (30 Points)
 
@@ -90,19 +92,20 @@ Inside the `tokenizeCode` function, there is a TODO comment for lexical errors:
 	* **Invalid Number**: any tokens that begin as valid numbers, but that do not actually match the pattern of numbers (_e.g._, **1.** and **1.1r**)
 	* **Invalid String**: any tokens that begin as valid strings, but that do not actually match the pattern of strings (_e.g._, **"hello**, **"_**, and **""_**)
 
-Test file [`src/ExtraCreditTest.cpp`](src/ExtraCreditTest.cpp) contains relevant test cases for your extra credits. 
-You can run [`bash extra_credit.sh`](extra_credit.sh) to check which of the provided test cases for extra credit 
-are passing.
+Again, we have provided a test suite in [`src/ExtraCreditTest.cpp`](src/ExtraCreditTest.cpp), which contains relevant test cases for the extra credit part of your assignment. You can run [`bash extra_credit.sh`](extra_credit.sh) verify your test cases are passing.
 
-#### Note
-1. Provided test cases are meant for **examples only**, we may run your code with a different test suite.
-2. Be careful about [the corner cases](src/Lexer.cpp#L13) while implementing. 
-3. To debug, you may use [`src/Main.cpp`](src/Main.cpp). 
-We have provided some helper function to help you debug your code.
+
+### Additional Notes
+1. The provided test cases are **examples only**, and we may run your code with different test suites.
+2. Be careful about the [corner cases](src/Lexer.cpp#L13) during your implementation.
+3. For debugging, you may use our [`src/Main.cpp`](src/Main.cpp), which provides some helper functions to help you debug your code.
 
 
 ## Submission
-For this programming assignment, you will commit and push to the *master* branch of the remote repository. Please make sure not to modify the `.gitignore` file during submission.
+For this programming assignment, you will submit `Lexer.cpp` with the implemented functionality. Please commit and push `Lexer.cpp` to the *master* branch of the remote repository. Additionally,
+
+1. Please make sure all of the code you would like us to grade is inside `Lexer.cpp`, and try not to modify any other files in the directory.
+2. Please make sure not to modify the `.gitignore` file during submission.
 
 
 ## Piazza

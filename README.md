@@ -18,12 +18,14 @@ Instructor: Prof. Baishakhi Ray
 
 In lecture, you have been learning about lexical analysis and finite automata. In particular, you learned that programs can be classified by token roles or token classes. For this programming assignment, you will gain hands-on experience with lexical analysis and implement your own lexical analyzer to generate a token sequence from a program source.
 
-#### Setup:
-1. Install `cmake` from [here](https://cmake.org/download/), or running `sudo apt-get install cmake` in your terminal.
-2. Run `bash build.sh`.  
+### Setup
+
+Please follow these instructions prior to starting the assignment:
+
+1. Install `cmake` from [here](https://cmake.org/download/), or run `sudo apt-get install cmake` in your terminal/shell.
+2. Run our `build.sh` script as follows: `bash build.sh`.
 
 ### Main Assignment (100 Points)
-
 
 We have provided C++ file [`src/Lexer.cpp`](src/Lexer.cpp), and header file [`src/Lexer.h`](src/Lexer.h) 
 that contains setup code and helper classes/functions for tokens, 
@@ -100,9 +102,7 @@ We have provided some helper function to help you debug your code.
 
 
 ## Submission
-For this programming assignment, you will commit and push to the remote repository. 
-Please make sure not to modify the `.gitignore` file during submission.
-
+For this programming assignment, you will commit and push to the *master* branch of the remote repository. Please make sure not to modify the `.gitignore` file during submission.
 
 
 ## Piazza

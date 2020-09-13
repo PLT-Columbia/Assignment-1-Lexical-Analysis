@@ -49,9 +49,9 @@ We have provided below a list of token classes you must support:
 * [ ] **Comments (20 Points)**: any tokens represented by a sequence of characters beginning with a double slash (**//**) and that ends with a newline (**\n**)
 	* Examples of comments: **//Hello\n**, **//""\n**, and **//"1.01"\n**
 	* Token class: _COMMENT_
-* [ ] **Operators (20 Points)**: any tokens represented by a unary operator, binary operator, or an assignment operator, specifically from the list [_**++**_,__**--**_,__**>**_,__**<**_,__**>=**_,__**<=**_,__**==**_,__**=**_]
+* [ ] **Operators (20 Points)**: any tokens represented by a unary operator, binary operator, or an assignment operator, specifically from the list [_**++**_,&nbsp;_**--**_,&nbsp;_**>**_,&nbsp;_**<**_,&nbsp;_**>=**_,&nbsp;_**<=**_,&nbsp;_**==**_,&nbsp;_**=**_]
 	* Token classes: _UNOP_, _BINOP_, _ASSIGNOP_
-* [ ] **Parentheses, Braces, and Semicolons (20 Points)**: any tokens from the list [_**(**_,_**)**_,_**{**_,_**}**_,_**;**_]
+* [ ] **Parentheses, Braces, and Semicolons (20 Points)**: any tokens from the list [_**(**_,&nbsp;_**)**_,&nbsp;_**{**_,&nbsp;_**}**_,&nbsp;_**;**_]
 	* Token classes: _LPAR_, _RPAR_, _LBRACE_, _RBRACE_, _SEMICOLON_
 
 You are not required to handle standalone whitespaces (_e.g._, **\t**, **\n**, **\r**, etc.), but if you don't handle them, make sure to properly ignore them.

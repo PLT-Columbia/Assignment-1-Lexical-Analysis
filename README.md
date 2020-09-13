@@ -11,7 +11,7 @@ Instructor: Prof. Baishakhi Ray
 ## Logistics
 * **Announcement Date:** Wednesday, September 16, 2020
 * **Due Date:** Wednesday, September 30, 2020 by 11:59 PM. **No extensions!**
-* **Total Points:** 140
+* **Total Points:** 100
 
 
 ## Assignment
@@ -25,7 +25,7 @@ Please follow these instructions prior to starting the assignment:
 1. Install `cmake` from [here](https://cmake.org/download/), or run `sudo apt-get install cmake` in your terminal/shell.
 2. Run our `build.sh` script as follows: `bash build.sh`.
 
-### Main Assignment (140 Points)
+### Main Assignment (100 Points)
 
 We have provided a C++ file, [`src/Lexer.cpp`](src/Lexer.cpp), as well as a header file, [`src/Lexer.h`](src/Lexer.h), that contain setup code and helper classes/functions for tokens, token classes, state transitions, and outputting tokens. Your task will be to fill in the missing items of the tokenizer to generate all tokens for an input code snippet.
 
@@ -49,10 +49,12 @@ We have provided below a list of token classes you must support:
 * [ ] **Comments (20 Points)**: any tokens represented by a sequence of characters beginning with a double slash (**//**) and that ends with a newline (**\n**)
 	* Examples of comments: **//Hello\n**, **//""\n**, and **//"1.01"\n**
 	* Token class: _COMMENT_
-* [ ] **Operators (20 Points)**: any tokens represented by a unary operator, binary operator, or an assignment operator, specifically from the list [_**++**_,&nbsp;_**--**_,&nbsp;_**>**_,&nbsp;_**<**_,&nbsp;_**>=**_,&nbsp;_**<=**_,&nbsp;_**==**_,&nbsp;_**=**_]
+* [ ] **Operators (0 Points)**: any tokens represented by a unary operator, binary operator, or an assignment operator, specifically from the list [_**++**_,&nbsp;_**--**_,&nbsp;_**>**_,&nbsp;_**<**_,&nbsp;_**>=**_,&nbsp;_**<=**_,&nbsp;_**==**_,&nbsp;_**=**_]
 	* Token classes: _UNOP_, _BINOP_, _ASSIGNOP_
-* [ ] **Parentheses, Braces, and Semicolons (20 Points)**: any tokens from the list [_**(**_,&nbsp;_**)**_,&nbsp;_**{**_,&nbsp;_**}**_,&nbsp;_**;**_]
+	* We have already implemented operators for you.
+* [ ] **Parentheses, Braces, and Semicolons (0 Points)**: any tokens from the list [_**(**_,&nbsp;_**)**_,&nbsp;_**{**_,&nbsp;_**}**_,&nbsp;_**;**_]
 	* Token classes: _LPAR_, _RPAR_, _LBRACE_, _RBRACE_, _SEMICOLON_
+	* We have already implemented parentheses, braces, and semicolons for you.
 
 You are not required to handle standalone whitespaces (_e.g._, **\t**, **\n**, **\r**, etc.), but if you don't handle them, make sure to properly ignore them.
 

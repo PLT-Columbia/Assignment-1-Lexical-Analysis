@@ -15,15 +15,15 @@
  *         Whitespaces usually finish a token, except for strings and comments.
  *         For example, `hello world ` contains 2 identifier tokens, each terminated with a whitespace.
  *         However, `"Hello world "` contains 1 string token, and both spaces are included in the token lexeme.
- *      2. Whitespaces (i.e. ' ', '\t', '\n') usually ends sequences of characters in a token. However,
- *         other character can also end token stream. For example,
+ *      2. Whitespaces (i.e. ' ', '\t', '\n') usually end sequences of characters in a token. However,
+ *         other characters can also end a token stream. For example,
  *         a. print ( ) -> the tokens here are <ID, "print">, <LPAR, "(">, and <RPAR, ")">
- *         b. print() -> the tokens here are alse <ID, "print">, <LPAR, "(">, and <RPAR, ")">
- *         Note that, in the former case, space (' ') after the token print ended the "print" token.
- *         However, in the latter case, 'print' is followed by left parenthesis '(' which ends the "print" token.
- *         Your code should be able to handle both the scenario.
- *      3. For comment, you should discard the newline character ('\n') that ends the comment.
- *        See LexerTest.cpp for relevant tst case.
+ *         b. print() -> the tokens here are also <ID, "print">, <LPAR, "(">, and <RPAR, ")">
+ *         Note that, in the former case, the space, ' ', after the token print ended the "print" token.
+ *         However, in the latter case, "print" is followed by a left parenthesis, '(', which ends the "print" token.
+ *         Your code should be able to handle both these scenarios.
+ *      3. For comments, you should discard the newline character ('\n') that ends the comments.
+ *        See LexerTest.cpp for the relevant test case.
  */
 std::string stateTransition(std::string current_state, char ch) {
     if (current_state.empty()) {
@@ -51,9 +51,9 @@ std::vector<Token> tokenizeCode(std::string _character_stream) {
     std::vector<Token> tokens;
     /*
      * Note to the students:
-     *     You should not make any change to the function prototype (i.e., function name, parameter, and return type).
-     *     Any such change you cause the test suite to fail.
-     *     You may define auxiliary/helper function which you can call from this function.
+     *     You should not make any changes to the function prototype (i.e., function name, parameter, and return type).
+     *     Any such changes cause the test suite to fail.
+     *     You may define auxiliary/helper functions, which can then be call edfrom this function.
      */
     std::string current_state = ""; // Initially, we start with a null or empty state.
     std::string next_state = "";
@@ -107,23 +107,24 @@ std::vector<Token> tokenizeCode(std::string _character_stream) {
         else {
             // TODO: add the rest of the tokens.
             // TODO: Make sure to flag the 'token_accepted' as true when you accept a token.
-            // TODO:
-            //      a. Implement Rest of the Keywords i.e. else, while, extern, asm, for
-            //      b. Implement Identifier.
-            //      c. Implement Number.
-            //      d. Implement String.
-            //      e. Implement Comment.
-            //      f. [Extra Credit] Implement Lexical Error Check. In case of an error,
-            //                        the cause of the error ("Invalid Number", "Invalid String") should go to the lexeme.
+            /* TODO:
+             *      a. Implement the rest of the keywords, i.e., else, while, extern, asm, for
+             *      b. Implement dentifiers.
+             *      c. Implement numbers.
+             *      d. Implement strings.
+             *      e. Implement comments.
+             *      f. [Extra Credit] Implement a lexical error check. In the case of an error,
+             *         the cause of the error ("Invalid Number" or "Invalid String") should go to the lexeme.
+             */
         }
-        // If we have already accepted a token, we will start from a empty state.
+        // If we have already accepted a token, we will start from an empty state.
         if (token_accepted){
             current_state = "";
             next_state = "";
             token_accepted = false;
         }
         else{
-            // No token has been accepted by this character. Let's proceed
+            // No token has been accepted by this character. Let's proceed!
             current_state = next_state;
         }
     }

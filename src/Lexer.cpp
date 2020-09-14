@@ -177,33 +177,35 @@ Token::Token(TokenType _type, std::string _lexeme) {
 
 std::string get_token_type_string(TokenType _type) {
     switch (_type) {
-        case type_lpar:
-            return "LPAR";
-        case type_rpar:
-            return "RPAR";
-        case type_lcurly_brace:
-            return "L-CURLY-BRACE";
-        case type_rcurly_brace:
-            return "R-CURLY-BRACE";
-        case type_keyword:
-            return "KEYWORD";
-        case type_identifier:
-            return "ID";
-        case type_number:
-            return "NUMBER";
-        case type_string:
-            return "STRING";
-        case type_comment:
-            return "COMMENT";
-        case type_error:
-            return "ERROR";
-        case type_unaryop:
-            return "UNOP";
-        case type_binop:
-            return "BINOP";
-        case type_semicolon:
-            return "SEMICOLON";
-        case type_assign_op:
-            return "ASSIGN";
+    case type_lpar:
+        return "LPAR";
+    case type_rpar:
+        return "RPAR";
+    case type_lcurly_brace:
+        return "L-CURLY-BRACE";
+    case type_rcurly_brace:
+        return "R-CURLY-BRACE";
+    case type_keyword:
+        return "KEYWORD";
+    case type_identifier:
+        return "ID";
+    case type_number:
+        return "NUMBER";
+    case type_string:
+        return "STRING";
+    case type_comment:
+        return "COMMENT";
+    case type_error:
+        return "ERROR";
+    case type_unaryop:
+        return "UNOP";
+    case type_binop:
+        return "BINOP";
+    case type_semicolon:
+        return "SEMICOLON";
+    case type_assign_op:
+        return "ASSIGN";
+    default:
+        return "UNKNOWN";
     }
 }

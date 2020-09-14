@@ -1,5 +1,6 @@
 echo "Building project!"
-bash build.sh;
+bash build.sh
 
 echo "Executing Tests!"
-./TestLexer;
+cd build
+./TestLexer

@@ -1,7 +1,8 @@
 
 echo "Building project!"
-bash build.sh;
+bash build.sh
 
 
 echo "Executing Tests For Extra Credit!"
-./ExtraCreditTest;
+cd build
+./ExtraCreditTest

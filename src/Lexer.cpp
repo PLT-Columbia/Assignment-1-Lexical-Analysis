@@ -9,25 +9,34 @@
 
 /*
  * We simulate the state transitions with a DFA here.
- * The next state should be constructed based on the current state and the input character.
+ * The next state should be constructed based on the current state and the
+ * input character.
  * Gotcha note!
- *      1. Be careful about whitespaces.
- *         Whitespaces usually finish a token, except for strings and comments.
- *         For example, `hello world ` contains 2 identifier tokens, each terminated with a whitespace.
- *         However, `"Hello world "` contains 1 string token, and both spaces are included in the token lexeme.
- *      2. Whitespaces (i.e. ' ', '\t', '\n') usually end sequences of characters in a token. However,
- *         other characters can also end a token stream. For example,
- *         a. print ( ) -> the tokens here are <ID, "print">, <LPAR, "(">, and <RPAR, ")">
- *         b. print() -> the tokens here are also <ID, "print">, <LPAR, "(">, and <RPAR, ")">
- *         Note that, in the former case, the space, ' ', after the token print ended the "print" token.
- *         However, in the latter case, "print" is followed by a left parenthesis, '(', which ends the "print" token.
- *         Your code should be able to handle both these scenarios.
- *      3. For comments, you should discard the newline character ('\n') that ends the comments.
- *         See LexerTest.cpp for the relevant test case.
+ *   1. Be careful about whitespaces.
+ *      Whitespaces usually finish a token, except for strings and comments.
+ *      For example, `hello world ` contains 2 identifier tokens, each terminated
+ *      with a whitespace.
+ *      However, `"Hello world "` contains 1 string token, and both spaces are
+ *      included in the token lexeme.
+ *   2. Whitespaces (i.e. ' ', '\t', '\n') usually end sequences of characters
+ *      in a token. However, other characters can also end a token stream.
+ *      For example,
+ *        a. print ( ) -> the tokens here are <ID, "print">, <LPAR, "(">, and
+ *           <RPAR, ")">
+ *        b. print() -> the tokens here are also <ID, "print">, <LPAR, "(">, and
+ *           <RPAR, ")">
+ *      Note that, in the former case, the space, ' ', after the token print
+ *      ended the "print" token.
+ *      However, in the latter case, "print" is followed by a left parenthesis,
+ *      '(', which ends the "print" token.
+ *      Your code should be able to handle both these scenarios.
+ *   3. For comments, you should discard the newline character ('\n') that ends
+ *      the comments. See LexerTest.cpp for the relevant test case.
  */
 std::string stateTransition(std::string current_state, char ch) {
     if (current_state.empty()) {
-        // When the state is empty, the input character will represent the current state.
+        // When the state is empty, the input character will represent the
+        // current state.
         current_state.push_back(ch);
         return current_state;
     }
@@ -51,11 +60,15 @@ std::vector<Token> tokenizeCode(std::string _character_stream) {
     std::vector<Token> tokens;
     /*
      * Note to the students:
-     *     You should not make any changes to the function prototype (i.e., function name, parameter, and return type).
-     *     Any such changes cause the test suite to fail.
-     *     You may define auxiliary/helper functions, which can then be call edfrom this function.
+     *   You should not make any changes to the function prototype (i.e., 
+     *   function name, parameter, and return type). Any such changes cause the
+     *   test suite to fail.
+     *   You may define auxiliary/helper functions, which can then be called
+     *   from this function.
      */
-    std::string current_state = ""; // Initially, we start with a null or empty state.
+
+    // Initially, we start with a null or empty state.
+    std::string current_state = ""; 
     std::string next_state = "";
     bool token_accepted = false;
     // We scan character by character.
@@ -105,16 +118,19 @@ std::vector<Token> tokenizeCode(std::string _character_stream) {
             token_accepted = true;
         }
         else {
-            // TODO: add the rest of the tokens.
-            // TODO: Make sure to flag the 'token_accepted' as true when you accept a token.
-            /* TODO:
-             *      a. Implement the rest of the keywords, i.e., else, while, extern, asm, for
-             *      b. Implement dentifiers.
-             *      c. Implement numbers.
-             *      d. Implement strings.
-             *      e. Implement comments.
-             *      f. [Extra Credit] Implement a lexical error check. In the case of an error,
-             *         the cause of the error ("Invalid Number" or "Invalid String") should go to the lexeme.
+            /* TODO: 
+             *   Add the rest of the tokens. Make sure to flag the 'token_accepted'
+             *   as true when you accept a token.
+             * 
+             *   a. Implement the rest of the keywords, i.e., else, while, 
+             *      extern, asm, for, ...
+             *   b. Implement dentifiers.
+             *   c. Implement numbers.
+             *   d. Implement strings.
+             *   e. Implement comments.
+             *   f. [Extra Credit] Implement a lexical error check. In the case
+             *      of an error, the cause of the error ("Invalid Number" or 
+             *      "Invalid String") should go to the lexeme.
              */
         }
         // If we have already accepted a token, we will start from an empty state.
@@ -149,7 +165,8 @@ bool Token::operator!=(const Token& other) const{
 
 std::string Token::get_repr()
 {
-    std::string return_str = "<" + get_token_type_string(this->type) + ", " + this->lexeme + ">";
+    std::string return_str = "<" + get_token_type_string(this->type) + ", " + 
+                             this->lexeme + ">";
     return return_str;
 }
 

@@ -51,7 +51,7 @@ We have provided below a list of token classes you must support:
 	* Token class: _COMMENT_
 * [ ] **Operators (0 Points)**: any tokens represented by a unary operator, binary operator, or an assignment operator, specifically from the list [_**++**_,&nbsp;_**--**_,&nbsp;_**>**_,&nbsp;_**<**_,&nbsp;_**>=**_,&nbsp;_**<=**_,&nbsp;_**==**_,&nbsp;_**=**_]
 	* Token classes: _UNOP_, _BINOP_, _ASSIGNOP_
-	* We have already implemented **some** of these operators for you. You _**Don't**_ need to implement the rest. We will **NOT** use any test case containing any unimplemented operators. 
+	* We have already implemented **some** of these operators for you. You _**DON'T**_ need to implement the rest. We will **NOT** use any test case containing any unimplemented operators. 
 * [ ] **Parentheses, Braces, and Semicolons (0 Points)**: any tokens from the list [_**(**_,&nbsp;_**)**_,&nbsp;_**{**_,&nbsp;_**}**_,&nbsp;_**;**_]
 	* Token classes: _LPAR_, _RPAR_, _LBRACE_, _RBRACE_, _SEMICOLON_
 	* We have already implemented parentheses, braces, and semicolons for you.

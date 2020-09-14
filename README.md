@@ -16,7 +16,7 @@ Instructor: Prof. Baishakhi Ray
 
 ## Assignment
 
-In lecture, you have been learning about lexical analysis and finite automata. In particular, you learned that programs can be classified by token roles or token classes. For this programming assignment, you will gain hands-on experience with lexical analysis and implement your own lexical analyzer to generate a token sequence from a program source.
+In lecture, you learned that first task in a compiler's workflow is Lexical Analysis. Lexical analyzer, _aka._ **Tokenizer** converts the raw sequence of character in code into sequence of tokens. In order for doing that, Lexical Analyzer scans through the sequence of characters in code, groups them together into lexemes, and identify the token class for each of the lexeme. For this programming assignment, you will gain hands-on experience with lexical analysis and implement your own lexical analyzer. You will implement a partial lexical analyzer for **C** programming language. 
 
 ### Setup
 
@@ -51,7 +51,7 @@ We have provided below a list of token classes you must support:
 	* Token class: _COMMENT_
 * [ ] **Operators (0 Points)**: any tokens represented by a unary operator, binary operator, or an assignment operator, specifically from the list [_**++**_,&nbsp;_**--**_,&nbsp;_**>**_,&nbsp;_**<**_,&nbsp;_**>=**_,&nbsp;_**<=**_,&nbsp;_**==**_,&nbsp;_**=**_]
 	* Token classes: _UNOP_, _BINOP_, _ASSIGNOP_
-	* We have already implemented operators for you.
+	* We have already implemented **some** of these operators for you. You _**Don't**_ need to implement the rest. We will **NOT** use any test case containing any unimplemented operators. 
 * [ ] **Parentheses, Braces, and Semicolons (0 Points)**: any tokens from the list [_**(**_,&nbsp;_**)**_,&nbsp;_**{**_,&nbsp;_**}**_,&nbsp;_**;**_]
 	* Token classes: _LPAR_, _RPAR_, _LBRACE_, _RBRACE_, _SEMICOLON_
 	* We have already implemented parentheses, braces, and semicolons for you.
@@ -60,7 +60,7 @@ You are not required to handle standalone whitespaces (_e.g._, **\t**, **\n**, *
 
 ### Example
 
-Here is a sample code snippet and the expected output of `Lexer.cpp` once you have completed the implementation:
+Here is a sample code snippet and the expected output of Lexical Analyzer once you have completed the implementation:
 
 **Input:** 
 ```
@@ -108,10 +108,11 @@ Again, we have provided a test suite in [`src/ExtraCreditTest.cpp`](src/ExtraCre
 
 
 ## Submission
-For this programming assignment, you will submit `Lexer.cpp` with the implemented functionality. Please commit and push `Lexer.cpp` to the *master* branch of the remote repository. Additionally,
+For this programming assignment, you will have to implement the functionality in `src/Lexer.cpp`. Please commit and push your changes to the *master* branch of remote repository created for **your own** assignment. Additionally,
 
 1. Please make sure all of the code you would like us to grade is inside `Lexer.cpp`, and try not to modify any other files in the directory.
 2. Please make sure not to modify the `.gitignore` file during submission.
+3. Please run [`build.sh`](build.sh) to make sure that **project builds properly** before submitting the assignment. 
 
 
 ## Piazza

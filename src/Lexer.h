@@ -57,8 +57,6 @@ public:
     bool operator!=(const Token& other) const;
 };
 
-void printTokenStream(std::vector<Token> tokens);
-
 std::string get_token_type_string(TokenType _type);
 
 /*
@@ -69,13 +67,15 @@ std::string get_token_type_string(TokenType _type);
  *         Whitespaces usually finish a token, except for strings and comments.
  *         For example, `hello world ` contains 2 identifier tokens, each terminated with a whitespace.
  *         However, `"Hello world "` contains 1 string token, and both spaces are included in the token lexeme.
- *     2. Whitespaces (i.e. ' ', '\t', '\n') usually ends sequences of characters in a token. However,
- *        other character can also end token stream. For example,
- *        a. print ( ) -> the tokens here are <ID, "print">, <LPAR, "(">, and <RPAR, ")">
- *        b. print() -> the tokens here are alse <ID, "print">, <LPAR, "(">, and <RPAR, ")">
- *        Note that, in the former case, space (' ') after the token print ended the "print" token.
- *        However, in the latter case, 'print' is followed by left parenthesis '(' which ends the "print" token.
- *        Your code should be able to handle both the scenario.
+ *      2. Whitespaces (i.e. ' ', '\t', '\n') usually end sequences of characters in a token. However,
+ *         other characters can also end a token stream. For example,
+ *         a. print ( ) -> the tokens here are <ID, "print">, <LPAR, "(">, and <RPAR, ")">
+ *         b. print() -> the tokens here are also <ID, "print">, <LPAR, "(">, and <RPAR, ")">
+ *         Note that, in the former case, the space, ' ', after the token print ended the "print" token.
+ *         However, in the latter case, "print" is followed by a left parenthesis, '(', which ends the "print" token.
+ *         Your code should be able to handle both these scenarios.
+ *      3. For comments, you should discard the newline character ('\n') that ends the comments.
+ *         See LexerTest.cpp for the relevant test case.
  */
 std::string stateTransition(std::string current_state, char ch);
 

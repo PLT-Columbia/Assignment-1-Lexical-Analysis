@@ -84,6 +84,7 @@ if(n > 0) {
 <SEMICOLON, ;> 
 <R-CURLY-BRACE, }>
 ```
+**Note:** You can print such representation of token sequences using [`printTokenStream`](src/Main.cpp#8) function in `src/Main.cpp` file. 
 
 We have provided a test suite in [`src/LexerTest.cpp`](src/LexerTest.cpp), which contains relevant test cases for your main assignment. You can run [`bash test.sh`](test.sh) to verify your test cases are passing.
 

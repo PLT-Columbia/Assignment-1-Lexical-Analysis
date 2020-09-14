@@ -1,8 +1,15 @@
+#include <utility>
 #include <iostream>
 #include <string>
 #include <vector>
 #include "Lexer.h"
 
+
+void printTokenStream(std::vector<Token> tokens) {
+    for (auto& token : tokens) {
+        std::cout << token.get_repr() << std::endl;
+    }
+}
 
 bool tokenMatch(std::vector<Token> generated_tokens, std::vector<Token> expected_tokens){
     int gen_size = generated_tokens.size();

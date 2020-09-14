@@ -23,7 +23,7 @@
  *         However, in the latter case, "print" is followed by a left parenthesis, '(', which ends the "print" token.
  *         Your code should be able to handle both these scenarios.
  *      3. For comments, you should discard the newline character ('\n') that ends the comments.
- *        See LexerTest.cpp for the relevant test case.
+ *         See LexerTest.cpp for the relevant test case.
  */
 std::string stateTransition(std::string current_state, char ch) {
     if (current_state.empty()) {
@@ -149,19 +149,13 @@ bool Token::operator!=(const Token& other) const{
 
 std::string Token::get_repr()
 {
-    std::string return_str =  get_token_type_string(this->type) + ", \"" + this->lexeme + "\"";
+    std::string return_str = "<" + get_token_type_string(this->type) + ", " + this->lexeme + ">";
     return return_str;
 }
 
 Token::Token(TokenType _type, std::string _lexeme) {
     this->type = _type;
     this->lexeme = std::move(_lexeme);
-}
-
-void printTokenStream(std::vector<Token> tokens) {
-    for (auto& token : tokens) {
-        std::cout << token.get_repr() << " ";
-    }
 }
 
 std::string get_token_type_string(TokenType _type) {

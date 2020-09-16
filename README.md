@@ -60,7 +60,7 @@ You are not required to handle standalone whitespaces (_e.g._, **\t**, **\n**, *
 
 ### Example
 
-Here is a sample code snippet and the expected output of Lexical Analyzer once you have completed the implementation:
+Here is a sample code snippet and the expected output of lexical analyzer once you have completed the implementation:
 
 **Input:** 
 ```

@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 project(Assignment_1)
 
+set(CMAKE_CXX_STANDARD 11)
+
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .

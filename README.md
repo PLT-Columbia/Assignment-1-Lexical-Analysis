@@ -43,7 +43,7 @@ We have provided below a list of token classes you must support:
 * [ ] **Numbers (20 Points)**: any numerical tokens optionally containing a **_decimal point/period_** (.), _i.e._, both integers and floating-point numbers
     * Examples of valid numbers: **1**, **1.0**, **1.01**, and **.01**
     * Token class: _NUMBER_
-* [ ] **Strings (20 Points)**: any tokens represented by a sequence of characters (including the empty sequence) that begins and ends with double quotes (")
+* [ ] **Strings (20 Points)**: any tokens represented by a sequence of characters (including the empty sequence) that begins and ends with double quotes ("). It is **not** required to handle escape characters like `\"` 
 	* Examples of strings: **"Hello"**, **""**, and **"1.01"**
 	* Token class: _STRING_
 * [ ] **Comments (20 Points)**: any tokens represented by a sequence of characters beginning with a double slash (**//**) and that ends with a newline (**\n**)

@@ -16,7 +16,7 @@ Instructor: Prof. Baishakhi Ray
 
 ## Assignment
 
-In lecture, you learned that the first task in a compiler's workflow is lexical analysis. A **lexical analyzer** (or **tokenizer**) converts the raw sequence of characters from the code into sequence of tokens. In order to do that, the lexical analyzer scans through the sequence of characters in the code, groups them together into lexemes, and identifies the token class for each lexeme. For this programming assignment, you will gain hands-on experience with lexical analysis and implement your own lexical analyzer. You will implement a partial lexical analyzer in **C++**.
+In lecture, you learned that the first task in a compiler's workflow is lexical analysis. A **lexical analyzer** (or **tokenizer**) converts the raw sequence of characters from the code into sequence of tokens. In order to do that, the lexical analyzer scans through the sequence of characters in the code, groups them together into lexemes, and identifies the token class for each lexeme. For this programming assignment, you will gain hands-on experience with lexical analysis and implement your own lexical analyzer. You will implement a partial lexical analyzer (implemented in C++) that scans streams of C code.
 
 ### Setup
 

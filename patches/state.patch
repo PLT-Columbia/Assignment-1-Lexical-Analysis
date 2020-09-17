@@ -1,0 +1,17 @@
+diff --git a/src/Lexer.cpp b/src/Lexer.cpp
+--- a/src/Lexer.cpp
++++ b/src/Lexer.cpp
+@@ -43,6 +43,13 @@ std::string stateTransition(std::string current_state, char ch) {
+     else if (current_state == "i" && ch == 'f') {
+         return "if";
+     }
++    else if ((current_state == "<" || current_state == ">") && ch == '='){
++	current_state.push_back(ch);
++	return current_state;
++    }
++    else if (current_state == "+" && ch == '+'){
++	return "++";
++    }
+     // TODO: implement the rest of the state transitions.
+     else {
+         return "Not implemented error!";

@@ -5,10 +5,7 @@
 3. If you **do not** see any `error` in your screen that means you **can apply the patch automatically**. 
 4. Run the command `patch -p1 < state.patch`.
 5. The patch will be applied to the appropriate location. 
-6. Now run 
-    1. `git add src/Lexer.cpp`
-    2. `git commit -m "Apply state transition patch"`
-7. In case you see any `error`during step 2, apply the following patch manually.
+6. In case you see any `error`during step 2, apply the following patch manually.
     ```diff
     --- a/src/Lexer.cpp
     +++ b/src/Lexer.cpp
@@ -40,5 +37,8 @@
    ```   
    before the `else` block marked with `TODO` in `src/Lexer.cpp`. 
    
-**Finally**, remove the `state.patch` file `rm state.patch`.
+ 7. Now run 
+    1. `git add src/Lexer.cpp`
+    2. `git commit -m "Apply state transition patch"`  
+ 8. **Finally**, remove the `state.patch` file `rm state.patch`.
    

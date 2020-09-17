@@ -2,7 +2,7 @@
 
 1. Copy the [`state.patch`](state.patch) file in your assignment directory. 
 2. Check whether you can apply the patch automatically by running `git apply --check state.patch`.
-3. If you do not see any `error` in your screen that means you can apply the patch automatically. 
+3. If you **do not** see any `error` in your screen that means you **can apply the patch automatically**. 
 4. Run the command `patch -p1 < state.patch`.
 5. The patch will be applied to the appropriate location. 
 6. Now run 

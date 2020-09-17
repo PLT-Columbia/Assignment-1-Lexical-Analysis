@@ -28,7 +28,7 @@
              return "Not implemented error!";
    ```  
    
-   **Explanation:** Copy the following code 
+   **Explanation:** Insert the following code 
    ```c++
        else if ((current_state == "<" || current_state == ">") && ch == '='){
           current_state.push_back(ch);
@@ -38,5 +38,5 @@
           return "++";
        }
    ```   
-   after the second `else if` block (where the return value is `"if"`) in `src/Lexer.cpp`. 
+   before the `else` block marked with `TODO` in `src/Lexer.cpp`. 
    

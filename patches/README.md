@@ -40,3 +40,5 @@
    ```   
    before the `else` block marked with `TODO` in `src/Lexer.cpp`. 
    
+**Finally**, remove the `state.patch` file `rm state.patch`.
+   

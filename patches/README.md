@@ -35,7 +35,7 @@
           return "++";
        }
    ```   
-   before the `else` block marked with `TODO` in `src/Lexer.cpp`. 
+   before the `else` block marked with `TODO` in `stateTransition` function of `src/Lexer.cpp`. 
    
  7. Now run 
     1. `git add src/Lexer.cpp`

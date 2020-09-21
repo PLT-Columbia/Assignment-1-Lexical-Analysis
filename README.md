@@ -97,7 +97,7 @@ Inside the `tokenizeCode` function, there is a TODO comment for lexical errors:
 * **Detection (10 Points)**: determine if an error exists at all and output the result.
 * **Localization (20 Points)**: determine the cause(s) of any error that exists. There are 2 different causes of lexical errors that you need to support:
 	* **Invalid Number**: any tokens that begin as valid numbers, but that do not actually match the pattern of numbers (_e.g._, **1.** and **1.1r**)
-	* **Invalid String**: any tokens that begin as valid strings, but that do not actually match the pattern of strings (_e.g._, **"hello**, **"_**, and **""_**)
+	* **Invalid String**: any tokens that begin as valid strings, but that do not actually match the pattern of strings (_e.g._, **"hello**, **"_**)
 
 Again, we have provided a test suite in [`src/ExtraCreditTest.cpp`](src/ExtraCreditTest.cpp), which contains relevant test cases for the extra credit part of your assignment. You can run [`bash extra_credit.sh`](extra_credit.sh) to verify your test cases are passing.
 

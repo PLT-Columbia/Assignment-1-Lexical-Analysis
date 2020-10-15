@@ -1,0 +1,42 @@
+KeyWords.EmptyString, 0.036
+KeyWords.WhiteSpaces, 0.036
+KeyWords.OneKeyWord, 0.036
+KeyWords.MultipleKeyWords1, 0.036
+KeyWords.MultipleKeyWords2, 0.036
+Identifiers.OneIdentifier1, 0.036
+Identifiers.OneIdentifier2, 0.036
+Identifiers.OneIdentifier3, 0.036
+Identifiers.MultipleIdentifiers1, 0.036
+Identifiers.MultipleIdentifiers2, 0.036
+Numbers.OneNumber1, 0.036
+Numbers.OneNumber2, 0.036
+Numbers.OneNumber3, 0.036
+Numbers.MultipleNumbers1, 0.036
+Numbers.MultipleNumbers2, 0.036
+Strings.EmptyString, 0.036
+Strings.OneString1, 0.036
+Strings.OneString3, 0.036
+Strings.MultipleStrings1, 0.036
+Strings.MultipleStrings2, 0.036
+Comments.OneComment1, 0.036
+Comments.OneComment2, 0.036
+Comments.OneComment3, 0.036
+Comments.MultipleComments1, 0.036
+Comments.MultipleComments2, 0.036
+
+FullCodeTest.Test1, 0.05
+FullCodeTest.Test2, 0.05
+
+
+
+ErrorDetection.InvalidNumber1, 0.02
+ErrorDetection.InvalidNumber2, 0.02
+ErrorDetection.InvalidNumber3, 0.02
+ErrorDetection.InvalidNumber4, 0.02
+ErrorDetection.InvalidString1, 0.02
+
+ErrorLocalization.InvalidNumber1, 0.04
+ErrorLocalization.InvalidNumber2, 0.04
+ErrorLocalization.InvalidNumber3, 0.04
+ErrorLocalization.InvalidNumber4, 0.04
+ErrorLocalization.InvalidString1, 0.04
